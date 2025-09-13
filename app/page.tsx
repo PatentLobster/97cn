@@ -91,6 +91,13 @@ export default function Home() {
       <Win95Window
         title="97cn - Windows 95 Component Registry"
         className="w-full max-w-6xl mx-auto h-[90vh]"
+        menuBar={
+          <Win95MenuBar>
+            <Win95MenuItem onClick={() => setShowSearchDialog(true)}>File</Win95MenuItem>
+            <Win95MenuItem onClick={() => setShowThemeSwitcher(true)}>View</Win95MenuItem>
+            <Win95MenuItem onClick={() => setShowAboutDialog(true)}>Help</Win95MenuItem>
+          </Win95MenuBar>
+        }
         statusBar={
           <Win95StatusBar>
             <Win95StatusPanel className="flex-1">
@@ -107,13 +114,6 @@ export default function Home() {
           </Win95StatusBar>
         }
       >
-        {/* Menu Bar */}
-        <Win95MenuBar>
-          <Win95MenuItem onClick={() => setShowSearchDialog(true)}>File</Win95MenuItem>
-          <Win95MenuItem>Edit</Win95MenuItem>
-          <Win95MenuItem onClick={() => setShowThemeSwitcher(true)}>View</Win95MenuItem>
-          <Win95MenuItem onClick={() => setShowAboutDialog(true)}>Help</Win95MenuItem>
-        </Win95MenuBar>
 
         {/* Main Content */}
         <div className="flex flex-1 overflow-hidden">

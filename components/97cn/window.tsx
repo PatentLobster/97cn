@@ -14,6 +14,7 @@ interface Win95WindowProps extends React.HTMLAttributes<HTMLDivElement> {
   onClose?: () => void
   onMinimize?: () => void
   onMaximize?: () => void
+  menuBar?: React.ReactNode
   statusBar?: React.ReactNode
 }
 
@@ -31,6 +32,7 @@ const Win95Window = React.forwardRef<HTMLDivElement, Win95WindowProps>(
       onMinimize,
       onMaximize,
       children,
+      menuBar,
       statusBar,
       ...props
     },
@@ -56,7 +58,7 @@ const Win95Window = React.forwardRef<HTMLDivElement, Win95WindowProps>(
                 onClick={onMinimize}
                 className="w-4 h-3 bg-win95-button-face win95-raised hover:bg-win95-light-gray active:win95-sunken flex items-center justify-center"
               >
-                <Minus className="w-2 h-2" />
+                <Minus className="w-2 h-2 text-black" />
               </button>
             )}
             {maximizable && (
@@ -64,7 +66,7 @@ const Win95Window = React.forwardRef<HTMLDivElement, Win95WindowProps>(
                 onClick={onMaximize}
                 className="w-4 h-3 bg-win95-button-face win95-raised hover:bg-win95-light-gray active:win95-sunken flex items-center justify-center"
               >
-                <Square className="w-2 h-2" />
+                <Square className="w-2 h-2 text-black" />
               </button>
             )}
             {closable && (
@@ -72,11 +74,14 @@ const Win95Window = React.forwardRef<HTMLDivElement, Win95WindowProps>(
                 onClick={onClose}
                 className="w-4 h-3 bg-win95-button-face win95-raised hover:bg-win95-light-gray active:win95-sunken flex items-center justify-center"
               >
-                <X className="w-2 h-2" />
+                <X className="w-2 h-2 text-black" />
               </button>
             )}
           </div>
         </div>
+
+        {/* Menu Bar - Fixed at top */}
+        {menuBar && <div className="flex-shrink-0">{menuBar}</div>}
 
         <div className="flex-1 overflow-hidden flex flex-col">
           <div className="flex-1 p-2 overflow-auto win95-scrollbar">{children}</div>

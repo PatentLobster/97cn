@@ -74,6 +74,7 @@ A window container component that replicates the classic Windows 95 window appea
   </Win95Window>
 </AutoPreview>
 
+
 ## Props
 
 <PropsTable props={[
@@ -129,8 +130,13 @@ A window container component that replicates the classic Windows 95 window appea
     description: "Maximize button callback"
   },
   {
+    name: "menuBar",
+    type: "React.ReactNode",
+    description: "Menu bar content (stays fixed at top)"
+  },
+  {
     name: "statusBar",
     type: "React.ReactNode",
-    description: "Status bar content"
+    description: "Status bar content (stays fixed at bottom)"
   }
 ]} />
