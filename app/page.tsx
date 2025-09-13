@@ -103,7 +103,7 @@ export default function Home() {
             <Win95StatusPanel sunken={false}>
               Component: {components.find((c) => c.id === activeComponent)?.name}
             </Win95StatusPanel>
-            <Win95StatusPanel sunken={false}>97cn v1.0</Win95StatusPanel>
+            <Win95StatusPanel sunken={false}>97cn v0.1</Win95StatusPanel>
           </Win95StatusBar>
         }
       >

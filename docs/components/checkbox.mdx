@@ -1,4 +1,12 @@
+---
+title: "Checkbox"
+description: "Windows 95 styled checkbox component"
+category: "Controls"
+dependencies: ["@radix-ui/react-checkbox"]
+---
+
 import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
 import { InstallationTabs } from "@/components/installation-tabs"
 import { Win95Checkbox } from "@/components/97cn/checkbox"
 
@@ -24,35 +32,22 @@ A checkbox component that replicates the Windows 95 checkbox styling with sunken
   </div>
 </AutoPreview>
 
-```tsx
-import { Win95Checkbox } from "@/components/97cn/checkbox"
-
-export function Example() {
-  return (
-    <div className="flex items-center space-x-2">
-      <Win95Checkbox id="terms" />
-      <label htmlFor="terms">Accept terms and conditions</label>
-    </div>
-  )
-}
-```
-
 ## Examples
 
 ### Checked State
 
-<ComponentPreview>
+<AutoPreview>
   <div className="flex items-center space-x-2">
     <Win95Checkbox id="checked" defaultChecked />
     <label htmlFor="checked" className="text-xs text-win95-black">
       This is checked
     </label>
   </div>
-</ComponentPreview>
+</AutoPreview>
 
 ### Disabled State
 
-<ComponentPreview>
+<AutoPreview>
   <div className="space-y-2">
     <div className="flex items-center space-x-2">
       <Win95Checkbox id="disabled" disabled />
@@ -67,13 +62,31 @@ export function Example() {
       </label>
     </div>
   </div>
-</ComponentPreview>
+</AutoPreview>
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| checked | boolean | - | Controlled checked state |
-| defaultChecked | boolean | false | Default checked state |
-| disabled | boolean | false | Whether the checkbox is disabled |
-| onCheckedChange | (checked: boolean) => void | - | Callback when checked state changes |
+<PropsTable props={[
+  {
+    name: "checked",
+    type: "boolean",
+    description: "Controlled checked state"
+  },
+  {
+    name: "defaultChecked",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Default checked state"
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the checkbox is disabled"
+  },
+  {
+    name: "onCheckedChange",
+    type: "(checked: boolean) => void",
+    description: "Callback when checked state changes"
+  }
+]} />

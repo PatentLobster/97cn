@@ -24,7 +24,15 @@ function generateMDXTemplate(component) {
     ? `["${component.dependencies.join('", "')}"]`
     : "[]"
 
-  return `import { AutoPreview } from "@/components/docs/auto-preview"
+  return `---
+title: "${component.title}"
+description: "${component.description}"
+category: "${component.category}"
+dependencies: ${depsArray}
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
 import { InstallationTabs } from "@/components/installation-tabs"
 // TODO: Import the actual component here
 
@@ -57,7 +65,14 @@ ${component.description}
 
 ## Props
 
-{/* TODO: Add props table */}
+<PropsTable props={[
+  {
+    name: "propName",
+    type: "string",
+    defaultValue: '"default"',
+    description: "Description of the prop"
+  }
+]} />
 `
 }
 

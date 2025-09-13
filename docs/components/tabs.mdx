@@ -1,4 +1,12 @@
+---
+title: "Tabs"
+description: "Windows 95 styled tabs component"
+category: "Controls"
+dependencies: ["@radix-ui/react-tabs"]
+---
+
 import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
 import { InstallationTabs } from "@/components/installation-tabs"
 import { Win95Tabs, Win95TabsList, Win95TabsTrigger, Win95TabsContent } from "@/components/97cn/tabs"
 import { Win95Button } from "@/components/97cn/button"
@@ -38,53 +46,59 @@ A tabs component that replicates the Windows 95 tab interface with raised tab bu
   </Win95Tabs>
 </AutoPreview>
 
-```tsx
-import { 
-  Win95Tabs, 
-  Win95TabsList, 
-  Win95TabsTrigger, 
-  Win95TabsContent 
-} from "@/components/97cn/tabs"
-
-export function Example() {
-  return (
-    <Win95Tabs defaultValue="tab1">
-      <Win95TabsList>
-        <Win95TabsTrigger value="tab1">General</Win95TabsTrigger>
-        <Win95TabsTrigger value="tab2">Advanced</Win95TabsTrigger>
-      </Win95TabsList>
-      <Win95TabsContent value="tab1">
-        General settings content
-      </Win95TabsContent>
-      <Win95TabsContent value="tab2">
-        Advanced settings content
-      </Win95TabsContent>
-    </Win95Tabs>
-  )
-}
-```
-
 
 ## Props
 
 ### Win95Tabs
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| value | string | - | Controlled active tab |
-| defaultValue | string | - | Default active tab |
-| onValueChange | (value: string) => void | - | Callback when tab changes |
-| orientation | "horizontal" \| "vertical" | "horizontal" | Tab orientation |
+<PropsTable props={[
+  {
+    name: "value",
+    type: "string",
+    description: "Controlled active tab"
+  },
+  {
+    name: "defaultValue",
+    type: "string",
+    description: "Default active tab"
+  },
+  {
+    name: "onValueChange",
+    type: "(value: string) => void",
+    description: "Callback when tab changes"
+  },
+  {
+    name: "orientation",
+    type: '"horizontal" | "vertical"',
+    defaultValue: '"horizontal"',
+    description: "Tab orientation"
+  }
+]} />
 
 ### Win95TabsTrigger
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| value | string | - | Tab value |
-| disabled | boolean | false | Whether the tab is disabled |
+<PropsTable props={[
+  {
+    name: "value",
+    type: "string",
+    required: true,
+    description: "Tab value"
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the tab is disabled"
+  }
+]} />
 
 ### Win95TabsContent
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| value | string | - | Associated tab value |
+<PropsTable props={[
+  {
+    name: "value",
+    type: "string",
+    required: true,
+    description: "Associated tab value"
+  }
+]} />

@@ -1,4 +1,12 @@
+---
+title: "Window"
+description: "Windows 95 styled window container component"
+category: "Layout"
+dependencies: ["lucide-react"]
+---
+
 import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
 import { InstallationTabs } from "@/components/installation-tabs"
 import { Win95Window } from "@/components/97cn/window"
 import { Win95Button } from "@/components/97cn/button"
@@ -25,35 +33,21 @@ A window container component that replicates the classic Windows 95 window appea
   </Win95Window>
 </AutoPreview>
 
-```tsx
-import { Win95Window } from "@/components/97cn/window"
-
-export function Example() {
-  return (
-    <Win95Window title="My Application">
-      <div className="p-2">
-        <p>Window content goes here</p>
-      </div>
-    </Win95Window>
-  )
-}
-```
-
 ## Examples
 
 ### Basic Window
 
-<ComponentPreview>
+<AutoPreview>
   <Win95Window title="Notepad" className="w-72 h-40">
     <div className="p-2 text-xs text-win95-black">
       This is a basic window with default controls.
     </div>
   </Win95Window>
-</ComponentPreview>
+</AutoPreview>
 
 ### Window with Custom Controls
 
-<ComponentPreview>
+<AutoPreview>
   <Win95Window 
     title="Calculator" 
     className="w-64 h-32"
@@ -64,11 +58,11 @@ export function Example() {
       This window has minimize and maximize disabled.
     </div>
   </Win95Window>
-</ComponentPreview>
+</AutoPreview>
 
 ### Inactive Window
 
-<ComponentPreview>
+<AutoPreview>
   <Win95Window 
     title="Background Window" 
     className="w-72 h-32"
@@ -78,19 +72,65 @@ export function Example() {
       This window appears inactive.
     </div>
   </Win95Window>
-</ComponentPreview>
+</AutoPreview>
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| title | string | "Window" | Window title text |
-| active | boolean | true | Whether window appears active |
-| resizable | boolean | true | Show resize handle |
-| minimizable | boolean | true | Show minimize button |
-| maximizable | boolean | true | Show maximize button |
-| closable | boolean | true | Show close button |
-| onClose | () => void | - | Close button callback |
-| onMinimize | () => void | - | Minimize button callback |
-| onMaximize | () => void | - | Maximize button callback |
-| statusBar | React.ReactNode | - | Status bar content |
+<PropsTable props={[
+  {
+    name: "title",
+    type: "string",
+    defaultValue: '"Window"',
+    description: "Window title text"
+  },
+  {
+    name: "active",
+    type: "boolean",
+    defaultValue: "true",
+    description: "Whether window appears active"
+  },
+  {
+    name: "resizable",
+    type: "boolean",
+    defaultValue: "true",
+    description: "Show resize handle"
+  },
+  {
+    name: "minimizable",
+    type: "boolean",
+    defaultValue: "true",
+    description: "Show minimize button"
+  },
+  {
+    name: "maximizable",
+    type: "boolean",
+    defaultValue: "true",
+    description: "Show maximize button"
+  },
+  {
+    name: "closable",
+    type: "boolean",
+    defaultValue: "true",
+    description: "Show close button"
+  },
+  {
+    name: "onClose",
+    type: "() => void",
+    description: "Close button callback"
+  },
+  {
+    name: "onMinimize",
+    type: "() => void",
+    description: "Minimize button callback"
+  },
+  {
+    name: "onMaximize",
+    type: "() => void",
+    description: "Maximize button callback"
+  },
+  {
+    name: "statusBar",
+    type: "React.ReactNode",
+    description: "Status bar content"
+  }
+]} />

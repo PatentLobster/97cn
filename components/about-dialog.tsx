@@ -15,7 +15,7 @@ export function AboutDialog({ onClose }: AboutDialogProps) {
           <div className="text-2xl font-bold text-win95-black">97cn</div>
           <div className="text-xs text-win95-black space-y-1">
             <p>Windows 95 Component Registry</p>
-            <p>Version 1.0</p>
+            <p>Version 0.1</p>
             <p>Built with React, Next.js, and Tailwind CSS</p>
           </div>
         </div>

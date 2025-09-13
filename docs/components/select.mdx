@@ -1,4 +1,12 @@
+---
+title: "Select"
+description: "Windows 95 styled select dropdown component"
+category: "Controls"
+dependencies: ["@radix-ui/react-select"]
+---
+
 import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
 import { InstallationTabs } from "@/components/installation-tabs"
 import { Win95Select, Win95SelectContent, Win95SelectItem, Win95SelectTrigger, Win95SelectValue } from "@/components/97cn/select"
 
@@ -15,7 +23,7 @@ A select dropdown component styled to match Windows 95's dropdown appearance wit
 
 ## Usage
 
-<ComponentPreview>
+<AutoPreview>
   <Win95Select>
     <Win95SelectTrigger className="w-48">
       <Win95SelectValue placeholder="Select an option" />
@@ -26,38 +34,13 @@ A select dropdown component styled to match Windows 95's dropdown appearance wit
       <Win95SelectItem value="option3">Option 3</Win95SelectItem>
     </Win95SelectContent>
   </Win95Select>
-</ComponentPreview>
-
-```tsx
-import { 
-  Win95Select, 
-  Win95SelectContent, 
-  Win95SelectItem, 
-  Win95SelectTrigger, 
-  Win95SelectValue 
-} from "@/components/97cn/select"
-
-export function Example() {
-  return (
-    <Win95Select>
-      <Win95SelectTrigger className="w-48">
-        <Win95SelectValue placeholder="Select an option" />
-      </Win95SelectTrigger>
-      <Win95SelectContent>
-        <Win95SelectItem value="option1">Option 1</Win95SelectItem>
-        <Win95SelectItem value="option2">Option 2</Win95SelectItem>
-        <Win95SelectItem value="option3">Option 3</Win95SelectItem>
-      </Win95SelectContent>
-    </Win95Select>
-  )
-}
-```
+</AutoPreview>
 
 ## Examples
 
 ### With Default Value
 
-<ComponentPreview>
+<AutoPreview>
   <Win95Select defaultValue="option2">
     <Win95SelectTrigger className="w-48">
       <Win95SelectValue />
@@ -68,11 +51,11 @@ export function Example() {
       <Win95SelectItem value="option3">Third Option</Win95SelectItem>
     </Win95SelectContent>
   </Win95Select>
-</ComponentPreview>
+</AutoPreview>
 
 ### Disabled Select
 
-<ComponentPreview>
+<AutoPreview>
   <Win95Select disabled>
     <Win95SelectTrigger className="w-48">
       <Win95SelectValue placeholder="Disabled select" />
@@ -81,28 +64,59 @@ export function Example() {
       <Win95SelectItem value="option1">Option 1</Win95SelectItem>
     </Win95SelectContent>
   </Win95Select>
-</ComponentPreview>
+</AutoPreview>
 
 ## Props
 
 ### Win95Select
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| value | string | - | Controlled value |
-| defaultValue | string | - | Default value |
-| onValueChange | (value: string) => void | - | Callback when value changes |
-| disabled | boolean | false | Whether the select is disabled |
+<PropsTable props={[
+  {
+    name: "value",
+    type: "string",
+    description: "Controlled value"
+  },
+  {
+    name: "defaultValue",
+    type: "string",
+    description: "Default value"
+  },
+  {
+    name: "onValueChange",
+    type: "(value: string) => void",
+    description: "Callback when value changes"
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the select is disabled"
+  }
+]} />
 
 ### Win95SelectTrigger
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| className | string | - | Additional CSS classes |
+<PropsTable props={[
+  {
+    name: "className",
+    type: "string",
+    description: "Additional CSS classes"
+  }
+]} />
 
 ### Win95SelectItem
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| value | string | - | Item value |
-| disabled | boolean | false | Whether the item is disabled |
+<PropsTable props={[
+  {
+    name: "value",
+    type: "string",
+    required: true,
+    description: "Item value"
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the item is disabled"
+  }
+]} />
