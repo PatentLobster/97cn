@@ -1,0 +1,110 @@
+---
+title: "Group Box"
+description: "Windows 95 styled group box component"
+category: "Layout"
+dependencies: []
+---
+
+import { ComponentPreview } from "@/components/docs/component-preview";
+import { InstallationTabs } from "@/components/installation-tabs";
+import { Win95GroupBox } from "@/components/97cn/group-box";
+import { Win95Button } from "@/components/97cn/button";
+import { Win95Checkbox } from "@/components/97cn/checkbox";
+
+# Group Box
+
+A group box component that creates a sunken container with an optional label, mimicking Windows 95's fieldset styling.
+
+## Installation
+
+<InstallationTabs componentName="group-box" dependencies={[]} />
+
+## Usage
+
+<ComponentPreview>
+  <Win95GroupBox label="Settings" className="w-64">
+    <div className="space-y-2 p-2">
+      <div className="flex items-center space-x-2">
+        <Win95Checkbox id="option1" />
+        <label htmlFor="option1" className="text-xs text-win95-black">
+          Enable feature A
+        </label>
+      </div>
+      <div className="flex items-center space-x-2">
+        <Win95Checkbox id="option2" />
+        <label htmlFor="option2" className="text-xs text-win95-black">
+          Enable feature B
+        </label>
+      </div>
+      <Win95Button size="sm">Apply</Win95Button>
+    </div>
+  </Win95GroupBox>
+</ComponentPreview>
+
+```tsx
+import { Win95GroupBox } from "@/components/97cn/group-box";
+
+export function Example() {
+  return (
+    <Win95GroupBox label="Settings">
+      <div className="p-2">{/* Group content */}</div>
+    </Win95GroupBox>
+  );
+}
+```
+
+## Examples
+
+### Without Label
+
+<ComponentPreview>
+  <Win95GroupBox className="w-48">
+    <div className="p-3 text-xs text-win95-black">
+      This group box has no label.
+    </div>
+  </Win95GroupBox>
+</ComponentPreview>
+
+### Nested Group Boxes
+
+<ComponentPreview>
+  <Win95GroupBox label="Outer Group" className="w-72">
+    <div className="p-2 space-y-2">
+      <Win95GroupBox label="Inner Group">
+        <div className="p-2 text-xs text-win95-black">
+          Nested content goes here.
+        </div>
+      </Win95GroupBox>
+      <Win95Button size="sm">OK</Win95Button>
+    </div>
+  </Win95GroupBox>
+</ComponentPreview>
+
+### Form Layout
+
+<ComponentPreview>
+  <Win95GroupBox label="User Information" className="w-80">
+    <div className="p-3 space-y-3">
+      <div className="space-y-1">
+        <label className="text-xs text-win95-black">Name:</label>
+        <input className="w-full h-6 px-2 text-xs bg-win95-white win95-sunken" />
+      </div>
+      <div className="space-y-1">
+        <label className="text-xs text-win95-black">Email:</label>
+        <input className="w-full h-6 px-2 text-xs bg-win95-white win95-sunken" />
+      </div>
+      <div className="flex gap-2">
+        <Win95Button size="sm">OK</Win95Button>
+        <Win95Button size="sm">Cancel</Win95Button>
+      </div>
+    </div>
+  </Win95GroupBox>
+</ComponentPreview>
+
+## Props
+
+| Prop      | Type            | Default | Description                       |
+| --------- | --------------- | ------- | --------------------------------- |
+| label     | string          | -       | Optional label text for the group |
+| className | string          | -       | Additional CSS classes            |
+| children  | React.ReactNode | -       | Group content                     |

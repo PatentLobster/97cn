@@ -1,0 +1,86 @@
+---
+title: "Checkbox"
+description: "Windows 95 styled checkbox component"
+category: "Controls"
+dependencies: ["@radix-ui/react-checkbox"]
+---
+
+import { ComponentPreview } from "@/components/docs/component-preview"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95Checkbox } from "@/components/97cn/checkbox"
+
+# Checkbox
+
+A checkbox component that replicates the Windows 95 checkbox styling with sunken appearance.
+
+## Installation
+
+<InstallationTabs 
+  componentName="checkbox" 
+  dependencies={["@radix-ui/react-checkbox"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <div className="flex items-center space-x-2">
+    <Win95Checkbox id="terms" />
+    <label htmlFor="terms" className="text-xs text-win95-black">
+      Accept terms and conditions
+    </label>
+  </div>
+</AutoPreview>
+
+```tsx
+import { Win95Checkbox } from "@/components/97cn/checkbox"
+
+export function Example() {
+  return (
+    <div className="flex items-center space-x-2">
+      <Win95Checkbox id="terms" />
+      <label htmlFor="terms">Accept terms and conditions</label>
+    </div>
+  )
+}
+```
+
+## Examples
+
+### Checked State
+
+<ComponentPreview>
+  <div className="flex items-center space-x-2">
+    <Win95Checkbox id="checked" defaultChecked />
+    <label htmlFor="checked" className="text-xs text-win95-black">
+      This is checked
+    </label>
+  </div>
+</ComponentPreview>
+
+### Disabled State
+
+<ComponentPreview>
+  <div className="space-y-2">
+    <div className="flex items-center space-x-2">
+      <Win95Checkbox id="disabled" disabled />
+      <label htmlFor="disabled" className="text-xs text-win95-black">
+        Disabled unchecked
+      </label>
+    </div>
+    <div className="flex items-center space-x-2">
+      <Win95Checkbox id="disabled-checked" disabled defaultChecked />
+      <label htmlFor="disabled-checked" className="text-xs text-win95-black">
+        Disabled checked
+      </label>
+    </div>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| checked | boolean | - | Controlled checked state |
+| defaultChecked | boolean | false | Default checked state |
+| disabled | boolean | false | Whether the checkbox is disabled |
+| onCheckedChange | (checked: boolean) => void | - | Callback when checked state changes |

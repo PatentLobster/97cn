@@ -1,0 +1,76 @@
+---
+title: "Textarea"
+description: "Windows 95 styled textarea component"
+category: "Controls"
+dependencies: []
+---
+
+import { ComponentPreview } from "@/components/docs/component-preview"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95Textarea } from "@/components/97cn/textarea"
+
+# Textarea
+
+A multi-line text input component styled to match Windows 95's sunken text area appearance.
+
+## Installation
+
+<InstallationTabs 
+  componentName="textarea" 
+  dependencies={[]}
+/>
+
+## Usage
+
+<ComponentPreview>
+  <Win95Textarea placeholder="Enter your message..." className="w-64 h-24" />
+</ComponentPreview>
+
+```tsx
+import { Win95Textarea } from "@/components/97cn/textarea"
+
+export function Example() {
+  return <Win95Textarea placeholder="Enter your message..." />
+}
+```
+
+## Examples
+
+### With Default Value
+
+<ComponentPreview>
+  <Win95Textarea 
+    defaultValue="This is some default text in the textarea."
+    className="w-64 h-24"
+  />
+</ComponentPreview>
+
+### Disabled Textarea
+
+<ComponentPreview>
+  <Win95Textarea 
+    placeholder="This textarea is disabled"
+    disabled
+    className="w-64 h-24"
+  />
+</ComponentPreview>
+
+### Resizable
+
+<ComponentPreview>
+  <Win95Textarea 
+    placeholder="This textarea can be resized"
+    className="w-64 h-24 resize"
+  />
+</ComponentPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| placeholder | string | - | Placeholder text |
+| disabled | boolean | false | Whether the textarea is disabled |
+| value | string | - | Controlled value |
+| defaultValue | string | - | Default value |
+| rows | number | - | Number of visible text lines |
+| cols | number | - | Visible width of the text control |

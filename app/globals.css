@@ -1,0 +1,386 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Adding Windows 95 theme variables */
+  --win95-gray: #c0c0c0;
+  --win95-dark-gray: #808080;
+  --win95-light-gray: #dfdfdf;
+  --win95-white: #ffffff;
+  --win95-black: #000000;
+  --win95-blue: #0000ff;
+  --win95-navy: #000080;
+  --win95-teal: #008080;
+  --win95-silver: #c0c0c0;
+  --win95-highlight: #0000ff;
+  --win95-highlight-text: #ffffff;
+  --win95-button-face: #c0c0c0;
+  --win95-button-shadow: #808080;
+  --win95-button-highlight: #ffffff;
+  --win95-button-dark-shadow: #404040;
+  --win95-window-frame: #c0c0c0;
+  --win95-active-title: #000080;
+  --win95-inactive-title: #808080;
+  --win95-active-title-text: #ffffff;
+  --win95-inactive-title-text: #c0c0c0;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+/* Added high contrast theme */
+.theme-high-contrast {
+  --win95-gray: #000000;
+  --win95-dark-gray: #ffffff;
+  --win95-light-gray: #000000;
+  --win95-white: #000000;
+  --win95-black: #ffffff;
+  --win95-blue: #ffffff;
+  --win95-navy: #ffffff;
+  --win95-teal: #000000;
+  --win95-silver: #000000;
+  --win95-highlight: #ffffff;
+  --win95-highlight-text: #000000;
+  --win95-button-face: #000000;
+  --win95-button-shadow: #ffffff;
+  --win95-button-highlight: #ffffff;
+  --win95-button-dark-shadow: #ffffff;
+  --win95-window-frame: #000000;
+  --win95-active-title: #ffffff;
+  --win95-inactive-title: #ffffff;
+  --win95-active-title-text: #000000;
+  --win95-inactive-title-text: #000000;
+}
+
+/* Added desert theme */
+.theme-desert {
+  --win95-gray: #d2b48c;
+  --win95-dark-gray: #8b7355;
+  --win95-light-gray: #f5deb3;
+  --win95-white: #fff8dc;
+  --win95-black: #2f1b14;
+  --win95-blue: #8b4513;
+  --win95-navy: #654321;
+  --win95-teal: #d2b48c;
+  --win95-silver: #d2b48c;
+  --win95-highlight: #8b4513;
+  --win95-highlight-text: #fff8dc;
+  --win95-button-face: #d2b48c;
+  --win95-button-shadow: #8b7355;
+  --win95-button-highlight: #f5deb3;
+  --win95-button-dark-shadow: #654321;
+  --win95-window-frame: #d2b48c;
+  --win95-active-title: #654321;
+  --win95-inactive-title: #8b7355;
+  --win95-active-title-text: #fff8dc;
+  --win95-inactive-title-text: #d2b48c;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Adding Windows 95 color utilities */
+  --color-win95-gray: var(--win95-gray);
+  --color-win95-dark-gray: var(--win95-dark-gray);
+  --color-win95-light-gray: var(--win95-light-gray);
+  --color-win95-white: var(--win95-white);
+  --color-win95-black: var(--win95-black);
+  --color-win95-blue: var(--win95-blue);
+  --color-win95-navy: var(--win95-navy);
+  --color-win95-teal: var(--win95-teal);
+  --color-win95-silver: var(--win95-silver);
+  --color-win95-highlight: var(--win95-highlight);
+  --color-win95-highlight-text: var(--win95-highlight-text);
+  --color-win95-button-face: var(--win95-button-face);
+  --color-win95-button-shadow: var(--win95-button-shadow);
+  --color-win95-button-highlight: var(--win95-button-highlight);
+  --color-win95-button-dark-shadow: var(--win95-button-dark-shadow);
+  --color-win95-window-frame: var(--win95-window-frame);
+  --color-win95-active-title: var(--win95-active-title);
+  --color-win95-inactive-title: var(--win95-inactive-title);
+  --color-win95-active-title-text: var(--win95-active-title-text);
+  --color-win95-inactive-title-text: var(--win95-inactive-title-text);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Adding Windows 95 utility classes */
+@layer utilities {
+  .win95-inset {
+    border-style: inset;
+    border-width: 2px;
+    border-color: var(--win95-button-shadow) var(--win95-button-highlight) var(--win95-button-highlight)
+      var(--win95-button-shadow);
+  }
+
+  .win95-outset {
+    border-style: outset;
+    border-width: 2px;
+    border-color: var(--win95-button-highlight) var(--win95-button-shadow) var(--win95-button-shadow)
+      var(--win95-button-highlight);
+  }
+
+  .win95-raised {
+    border-top: 2px solid var(--win95-button-highlight);
+    border-left: 2px solid var(--win95-button-highlight);
+    border-right: 2px solid var(--win95-button-shadow);
+    border-bottom: 2px solid var(--win95-button-shadow);
+  }
+
+  .win95-sunken {
+    border-top: 2px solid var(--win95-button-shadow);
+    border-left: 2px solid var(--win95-button-shadow);
+    border-right: 2px solid var(--win95-button-highlight);
+    border-bottom: 2px solid var(--win95-button-highlight);
+  }
+
+  .win95-window {
+    border: 2px outset var(--win95-button-face);
+    background-color: var(--win95-button-face);
+  }
+
+  /* Fixed contrast issue by using proper blue background with white text */
+  .win95-title-bar {
+    background: linear-gradient(90deg, var(--win95-active-title) 0%, #000080 100%);
+    color: var(--win95-active-title-text);
+    font-weight: bold;
+    font-size: 11px;
+    padding: 2px 4px;
+  }
+
+  .win95-button {
+    background-color: var(--win95-button-face);
+    border: 2px outset var(--win95-button-face);
+    font-size: 11px;
+    font-family: "MS Sans Serif", sans-serif;
+    padding: 1px 8px;
+    cursor: pointer;
+  }
+
+  .win95-button:active {
+    border: 2px inset var(--win95-button-face);
+    transform: translate(1px, 1px);
+  }
+
+  .win95-button:disabled {
+    color: var(--win95-button-shadow);
+    cursor: default;
+  }
+
+  .win95-text-field {
+    background-color: var(--win95-white);
+    border: 2px inset var(--win95-button-face);
+    font-size: 11px;
+    font-family: "MS Sans Serif", sans-serif;
+    padding: 2px 4px;
+  }
+
+  .win95-checkbox {
+    background-color: var(--win95-white);
+    border: 2px inset var(--win95-button-face);
+    width: 13px;
+    height: 13px;
+  }
+
+  .win95-menu {
+    background-color: var(--win95-button-face);
+    border: 2px outset var(--win95-button-face);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .win95-menu-item {
+    padding: 2px 16px;
+    font-size: 11px;
+    cursor: pointer;
+  }
+
+  .win95-menu-item:hover {
+    background-color: var(--win95-highlight);
+    color: var(--win95-highlight-text);
+  }
+
+  .win95-scrollbar {
+    background-color: var(--win95-button-face);
+    border: 2px inset var(--win95-button-face);
+  }
+
+  .win95-scrollbar-thumb {
+    background-color: var(--win95-button-face);
+    border: 2px outset var(--win95-button-face);
+    width: 16px;
+    height: 16px;
+    min-height: 20px;
+  }
+
+  .win95-scrollbar-thumb:hover {
+    background-color: var(--win95-light-gray);
+  }
+
+  .win95-scrollbar-thumb:active {
+    border: 2px inset var(--win95-button-face);
+  }
+
+  .win95-scrollbar-corner {
+    background: var(--win95-button-face);
+  }
+
+  /* Arrow buttons for scrollbar */
+  .win95-scrollbar-button {
+    background: var(--win95-button-face);
+    border: 2px outset var(--win95-button-face);
+    width: 16px;
+    height: 16px;
+  }
+
+  .win95-scrollbar-button:hover {
+    background: var(--win95-light-gray);
+  }
+
+  .win95-scrollbar-button:active {
+    border: 2px inset var(--win95-button-face);
+  }
+
+  /* Added Windows 95 focus state utility class with dotted border */
+  .win95-focus {
+    outline: 1px dotted var(--win95-black);
+    outline-offset: -3px;
+  }
+}
+
+/* Adding specific Sonner toast overrides to force Windows 95 styling */
+@layer components {
+  /* Force sharp corners on all Sonner toast elements */
+  .toaster [data-sonner-toast] {
+    border-radius: 0 !important;
+  }
+
+  .toaster [data-sonner-toast] * {
+    border-radius: 0 !important;
+  }
+
+  /* Ensure toast container has no rounded corners */
+  .toaster {
+    border-radius: 0 !important;
+  }
+
+  /* Override any Sonner default styles that might add rounded corners */
+  [data-sonner-toaster] [data-sonner-toast] {
+    border-radius: 0 !important;
+  }
+
+  [data-sonner-toaster] [data-sonner-toast] button {
+    border-radius: 0 !important;
+  }
+}

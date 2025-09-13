@@ -1,0 +1,103 @@
+---
+title: "Window"
+description: "Windows 95 styled window container component"
+category: "Layout"
+dependencies: ["lucide-react"]
+---
+
+import { ComponentPreview } from "@/components/docs/component-preview"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95Window } from "@/components/97cn/window"
+import { Win95Button } from "@/components/97cn/button"
+
+# Window
+
+A window container component that replicates the classic Windows 95 window appearance with title bar and controls.
+
+## Installation
+
+<InstallationTabs 
+  componentName="window" 
+  dependencies={["lucide-react"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Win95Window title="My Application" className="w-80 h-48">
+    <div className="p-2">
+      <p className="text-xs text-win95-black mb-2">This is a Windows 95 style window.</p>
+      <Win95Button>OK</Win95Button>
+    </div>
+  </Win95Window>
+</AutoPreview>
+
+```tsx
+import { Win95Window } from "@/components/97cn/window"
+
+export function Example() {
+  return (
+    <Win95Window title="My Application">
+      <div className="p-2">
+        <p>Window content goes here</p>
+      </div>
+    </Win95Window>
+  )
+}
+```
+
+## Examples
+
+### Basic Window
+
+<ComponentPreview>
+  <Win95Window title="Notepad" className="w-72 h-40">
+    <div className="p-2 text-xs text-win95-black">
+      This is a basic window with default controls.
+    </div>
+  </Win95Window>
+</ComponentPreview>
+
+### Window with Custom Controls
+
+<ComponentPreview>
+  <Win95Window 
+    title="Calculator" 
+    className="w-64 h-32"
+    minimizable={false}
+    maximizable={false}
+  >
+    <div className="p-2 text-xs text-win95-black">
+      This window has minimize and maximize disabled.
+    </div>
+  </Win95Window>
+</ComponentPreview>
+
+### Inactive Window
+
+<ComponentPreview>
+  <Win95Window 
+    title="Background Window" 
+    className="w-72 h-32"
+    active={false}
+  >
+    <div className="p-2 text-xs text-win95-black">
+      This window appears inactive.
+    </div>
+  </Win95Window>
+</ComponentPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| title | string | "Window" | Window title text |
+| active | boolean | true | Whether window appears active |
+| resizable | boolean | true | Show resize handle |
+| minimizable | boolean | true | Show minimize button |
+| maximizable | boolean | true | Show maximize button |
+| closable | boolean | true | Show close button |
+| onClose | () => void | - | Close button callback |
+| onMinimize | () => void | - | Minimize button callback |
+| onMaximize | () => void | - | Maximize button callback |
+| statusBar | React.ReactNode | - | Status bar content |

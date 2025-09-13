@@ -1,0 +1,62 @@
+---
+title: "Progress"
+description: "Windows 95 styled progress bar component"
+category: "Controls"
+dependencies: ["@radix-ui/react-progress"]
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95Progress } from "@/components/97cn/progress"
+
+# Progress
+
+A progress bar component that replicates the Windows 95 progress bar styling with blue fill.
+
+## Installation
+
+<InstallationTabs 
+  componentName="progress" 
+  dependencies={["@radix-ui/react-progress"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Win95Progress value={33} className="w-64" />
+</AutoPreview>
+
+```tsx
+import { Win95Progress } from "@/components/97cn/progress"
+
+export function Example() {
+  return <Win95Progress value={33} className="w-64" />
+}
+```
+
+## Examples
+
+### Different Values
+
+<AutoPreview>
+  <div className="space-y-2 w-64">
+    <Win95Progress value={0} />
+    <Win95Progress value={25} />
+    <Win95Progress value={50} />
+    <Win95Progress value={75} />
+    <Win95Progress value={100} />
+  </div>
+</AutoPreview>
+
+### Indeterminate
+
+<AutoPreview>
+  <Win95Progress className="w-64" />
+</AutoPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| value | number | - | Progress value (0-100) |
+| className | string | - | Additional CSS classes |

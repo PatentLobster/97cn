@@ -1,0 +1,65 @@
+---
+title: "Button"
+description: "Windows 95 styled button component with multiple variants"
+category: "Controls"
+dependencies: ["@radix-ui/react-slot", "class-variance-authority"]
+---
+
+import { ComponentPreview } from "@/components/docs/component-preview"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95Button } from "@/components/97cn/button"
+
+# Button
+
+A button component that mimics the classic Windows 95 button styling with raised and sunken states.
+
+## Installation
+
+<InstallationTabs 
+  componentName="button" 
+  dependencies={["@radix-ui/react-slot", "class-variance-authority"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Win95Button>Click me</Win95Button>
+</AutoPreview>
+
+```tsx
+import { Win95Button } from "@/components/97cn/button"
+
+export function Example() {
+  return <Win95Button>Click me</Win95Button>
+}
+```
+
+## Variants
+
+<AutoPreview>
+  <div className="flex gap-2 flex-wrap">
+    <Win95Button>Default Button</Win95Button>
+    <Win95Button variant="primary">Primary Button</Win95Button>
+    <Win95Button variant="flat">Flat Button</Win95Button>
+    <Win95Button disabled>Disabled Button</Win95Button>
+  </div>
+</AutoPreview>
+
+## Sizes
+
+<AutoPreview>
+  <div className="flex gap-2 items-center flex-wrap">
+    <Win95Button size="sm">Small</Win95Button>
+    <Win95Button size="default">Default</Win95Button>
+    <Win95Button size="lg">Large</Win95Button>
+  </div>
+</AutoPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| variant | "default" \| "primary" \| "flat" | "default" | Button style variant |
+| size | "sm" \| "default" \| "lg" \| "icon" | "default" | Button size |
+| asChild | boolean | false | Render as child element |
+| disabled | boolean | false | Whether the button is disabled |

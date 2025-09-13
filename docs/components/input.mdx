@@ -1,0 +1,65 @@
+---
+title: "Input"
+description: "Windows 95 styled text input component"
+category: "Controls"
+dependencies: []
+---
+
+import { ComponentPreview } from "@/components/docs/component-preview"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95Input } from "@/components/97cn/input"
+
+# Input
+
+A text input component styled to match Windows 95's sunken text field appearance.
+
+## Installation
+
+<InstallationTabs 
+  componentName="input" 
+  dependencies={[]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Win95Input placeholder="Enter text..." />
+</AutoPreview>
+
+```tsx
+import { Win95Input } from "@/components/97cn/input"
+
+export function Example() {
+  return <Win95Input placeholder="Enter text..." />
+}
+```
+
+## Examples
+
+### Basic Input
+
+<AutoPreview>
+  <Win95Input placeholder="Type something..." />
+</AutoPreview>
+
+### Disabled Input
+
+<AutoPreview>
+  <Win95Input placeholder="Disabled input" disabled />
+</AutoPreview>
+
+### With Value
+
+<AutoPreview>
+  <Win95Input defaultValue="Hello World" />
+</AutoPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| placeholder | string | - | Placeholder text |
+| disabled | boolean | false | Whether the input is disabled |
+| type | string | "text" | Input type |
+| value | string | - | Controlled value |
+| defaultValue | string | - | Default value |
