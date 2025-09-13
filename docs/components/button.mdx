@@ -5,9 +5,9 @@ category: "Controls"
 dependencies: ["@radix-ui/react-slot", "class-variance-authority"]
 ---
 
-import { ComponentPreview } from "@/components/docs/component-preview"
-import { InstallationTabs } from "@/components/installation-tabs"
-import { Win95Button } from "@/components/97cn/button"
+import { AutoPreview } from "@/components/docs/auto-preview";
+import { InstallationTabs } from "@/components/installation-tabs";
+import { Win95Button } from "@/components/97cn/button";
 
 # Button
 
@@ -15,8 +15,8 @@ A button component that mimics the classic Windows 95 button styling with raised
 
 ## Installation
 
-<InstallationTabs 
-  componentName="button" 
+<InstallationTabs
+  componentName="button"
   dependencies={["@radix-ui/react-slot", "class-variance-authority"]}
 />
 
@@ -25,14 +25,6 @@ A button component that mimics the classic Windows 95 button styling with raised
 <AutoPreview>
   <Win95Button>Click me</Win95Button>
 </AutoPreview>
-
-```tsx
-import { Win95Button } from "@/components/97cn/button"
-
-export function Example() {
-  return <Win95Button>Click me</Win95Button>
-}
-```
 
 ## Variants
 
@@ -57,9 +49,31 @@ export function Example() {
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| variant | "default" \| "primary" \| "flat" | "default" | Button style variant |
-| size | "sm" \| "default" \| "lg" \| "icon" | "default" | Button size |
-| asChild | boolean | false | Render as child element |
-| disabled | boolean | false | Whether the button is disabled |
+<PropsTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "primary" | "flat"',
+      defaultValue: '"default"',
+      description: "Button style variant",
+    },
+    {
+      name: "size",
+      type: '"sm" | "default" | "lg" | "icon"',
+      defaultValue: '"default"',
+      description: "Button size",
+    },
+    {
+      name: "asChild",
+      type: "boolean",
+      defaultValue: "false",
+      description: "Render as child element",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      description: "Whether the button is disabled",
+    },
+  ]}
+/>

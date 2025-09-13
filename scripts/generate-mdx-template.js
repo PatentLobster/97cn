@@ -24,14 +24,7 @@ function generateMDXTemplate(component) {
     ? `["${component.dependencies.join('", "')}"]`
     : "[]"
 
-  return `---
-title: "${component.title}"
-description: "${component.description}"
-category: "${component.category}"
-dependencies: ${depsArray}
----
-
-import { AutoPreview } from "@/components/docs/auto-preview"
+  return `import { AutoPreview } from "@/components/docs/auto-preview"
 import { InstallationTabs } from "@/components/installation-tabs"
 // TODO: Import the actual component here
 

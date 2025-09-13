@@ -105,7 +105,7 @@ export function MDXLoader({ componentId }: MDXLoaderProps) {
   }
 
   return (
-    <div className="prose prose-sm max-w-none">
+    <div className="max-w-none text-win95-black">
       <MDXContent components={mdxComponents} />
     </div>
   )

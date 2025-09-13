@@ -5,7 +5,7 @@ category: "Controls"
 dependencies: []
 ---
 
-import { ComponentPreview } from "@/components/docs/component-preview"
+import { AutoPreview } from "@/components/docs/auto-preview"
 import { InstallationTabs } from "@/components/installation-tabs"
 import { Win95Input } from "@/components/97cn/input"
 
@@ -25,14 +25,6 @@ A text input component styled to match Windows 95's sunken text field appearance
 <AutoPreview>
   <Win95Input placeholder="Enter text..." />
 </AutoPreview>
-
-```tsx
-import { Win95Input } from "@/components/97cn/input"
-
-export function Example() {
-  return <Win95Input placeholder="Enter text..." />
-}
-```
 
 ## Examples
 
@@ -58,8 +50,8 @@ export function Example() {
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| placeholder | string | - | Placeholder text |
-| disabled | boolean | false | Whether the input is disabled |
-| type | string | "text" | Input type |
-| value | string | - | Controlled value |
-| defaultValue | string | - | Default value |
+| placeholder | `string` | - | Placeholder text |
+| disabled | `boolean` | `false` | Whether the input is disabled |
+| type | `string` | `"text"` | Input type |
+| value | `string` | - | Controlled value |
+| defaultValue | `string` | - | Default value |

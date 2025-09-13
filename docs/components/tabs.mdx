@@ -1,11 +1,4 @@
----
-title: "Tabs"
-description: "Windows 95 styled tabs component"
-category: "Controls"
-dependencies: ["@radix-ui/react-tabs"]
----
-
-import { ComponentPreview } from "@/components/docs/component-preview"
+import { AutoPreview } from "@/components/docs/auto-preview"
 import { InstallationTabs } from "@/components/installation-tabs"
 import { Win95Tabs, Win95TabsList, Win95TabsTrigger, Win95TabsContent } from "@/components/97cn/tabs"
 import { Win95Button } from "@/components/97cn/button"
@@ -71,28 +64,6 @@ export function Example() {
 }
 ```
 
-## Examples
-
-### Vertical Tabs
-
-<ComponentPreview>
-  <Win95Tabs defaultValue="file" orientation="vertical" className="w-80 h-48">
-    <Win95TabsList className="flex-col h-full w-20">
-      <Win95TabsTrigger value="file" className="w-full">File</Win95TabsTrigger>
-      <Win95TabsTrigger value="edit" className="w-full">Edit</Win95TabsTrigger>
-      <Win95TabsTrigger value="view" className="w-full">View</Win95TabsTrigger>
-    </Win95TabsList>
-    <Win95TabsContent value="file" className="p-4 flex-1">
-      <p className="text-xs text-win95-black">File operations and settings.</p>
-    </Win95TabsContent>
-    <Win95TabsContent value="edit" className="p-4 flex-1">
-      <p className="text-xs text-win95-black">Edit preferences and options.</p>
-    </Win95TabsContent>
-    <Win95TabsContent value="view" className="p-4 flex-1">
-      <p className="text-xs text-win95-black">View customization settings.</p>
-    </Win95TabsContent>
-  </Win95Tabs>
-</ComponentPreview>
 
 ## Props
 
