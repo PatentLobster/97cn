@@ -1,0 +1,93 @@
+---
+title: "Toggle"
+description: "Windows 95 styled toggle button component"
+category: "Controls"
+dependencies: ["@radix-ui/react-toggle", "class-variance-authority"]
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Toggle } from "@/components/97cn/toggle"
+
+## Installation
+
+<InstallationTabs 
+  componentName="toggle" 
+  dependencies={["@radix-ui/react-toggle", "class-variance-authority"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Toggle aria-label="Toggle bold">
+    <span className="font-bold">B</span>
+  </Toggle>
+</AutoPreview>
+
+## Examples
+
+### Outline Variant
+
+<AutoPreview>
+  <Toggle variant="outline" aria-label="Toggle italic">
+    <span className="italic">I</span>
+  </Toggle>
+</AutoPreview>
+
+### Sizes
+
+<AutoPreview>
+  <div className="flex items-center gap-2">
+    <Toggle size="sm" aria-label="Small">Sm</Toggle>
+    <Toggle size="default" aria-label="Default">Default</Toggle>
+    <Toggle size="lg" aria-label="Large">Large</Toggle>
+  </div>
+</AutoPreview>
+
+### Disabled
+
+<AutoPreview>
+  <Toggle disabled aria-label="Disabled toggle">
+    Disabled
+  </Toggle>
+</AutoPreview>
+
+## Props
+
+<PropsTable props={[
+  {
+    name: "variant",
+    type: '"default" | "outline"',
+    defaultValue: '"default"',
+    description: "Toggle style variant"
+  },
+  {
+    name: "size",
+    type: '"sm" | "default" | "lg"',
+    defaultValue: '"default"',
+    description: "Toggle size"
+  },
+  {
+    name: "pressed",
+    type: "boolean",
+    description: "Controlled pressed state"
+  },
+  {
+    name: "defaultPressed",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Default pressed state"
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the toggle is disabled"
+  },
+  {
+    name: "onPressedChange",
+    type: "(pressed: boolean) => void",
+    description: "Callback when pressed state changes"
+  }
+]} />

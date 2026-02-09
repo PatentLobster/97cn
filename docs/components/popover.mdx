@@ -1,0 +1,73 @@
+---
+title: "Popover"
+description: "Windows 95 styled popover component"
+category: "Overlay"
+dependencies: ["@radix-ui/react-popover"]
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/97cn/popover"
+import { Win95Button } from "@/components/97cn/button"
+import { Win95Input } from "@/components/97cn/input"
+
+## Installation
+
+<InstallationTabs 
+  componentName="popover" 
+  dependencies={["@radix-ui/react-popover"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Popover>
+    <PopoverTrigger asChild>
+      <Win95Button>Open Popover</Win95Button>
+    </PopoverTrigger>
+    <PopoverContent className="w-64">
+      <div className="space-y-2">
+        <h4 className="text-xs font-bold text-win95-black">Settings</h4>
+        <div className="space-y-1">
+          <label className="text-xs text-win95-black">Width</label>
+          <Win95Input defaultValue="100%" />
+        </div>
+        <div className="space-y-1">
+          <label className="text-xs text-win95-black">Height</label>
+          <Win95Input defaultValue="auto" />
+        </div>
+      </div>
+    </PopoverContent>
+  </Popover>
+</AutoPreview>
+
+## Props
+
+### PopoverContent
+
+<PropsTable props={[
+  {
+    name: "side",
+    type: '"top" | "right" | "bottom" | "left"',
+    defaultValue: '"bottom"',
+    description: "Popover placement side"
+  },
+  {
+    name: "sideOffset",
+    type: "number",
+    defaultValue: "4",
+    description: "Distance from trigger in pixels"
+  },
+  {
+    name: "align",
+    type: '"start" | "center" | "end"',
+    defaultValue: '"center"',
+    description: "Alignment along the side"
+  },
+  {
+    name: "className",
+    type: "string",
+    description: "Additional CSS classes"
+  }
+]} />

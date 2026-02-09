@@ -1,0 +1,88 @@
+---
+title: "Slider"
+description: "Windows 95 styled slider component"
+category: "Controls"
+dependencies: ["@radix-ui/react-slider"]
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95Slider } from "@/components/97cn/slider"
+
+## Installation
+
+<InstallationTabs 
+  componentName="slider" 
+  dependencies={["@radix-ui/react-slider"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Win95Slider defaultValue={[50]} max={100} step={1} className="w-64" />
+</AutoPreview>
+
+## Examples
+
+### Default Value
+
+<AutoPreview>
+  <Win95Slider defaultValue={[33]} max={100} step={1} className="w-64" />
+</AutoPreview>
+
+### Small Steps
+
+<AutoPreview>
+  <Win95Slider defaultValue={[25]} max={100} step={5} className="w-64" />
+</AutoPreview>
+
+### Disabled
+
+<AutoPreview>
+  <Win95Slider defaultValue={[50]} max={100} step={1} disabled className="w-64" />
+</AutoPreview>
+
+## Props
+
+<PropsTable props={[
+  {
+    name: "value",
+    type: "number[]",
+    description: "Controlled value"
+  },
+  {
+    name: "defaultValue",
+    type: "number[]",
+    description: "Default value"
+  },
+  {
+    name: "max",
+    type: "number",
+    defaultValue: "100",
+    description: "Maximum value"
+  },
+  {
+    name: "min",
+    type: "number",
+    defaultValue: "0",
+    description: "Minimum value"
+  },
+  {
+    name: "step",
+    type: "number",
+    defaultValue: "1",
+    description: "Step increment"
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the slider is disabled"
+  },
+  {
+    name: "onValueChange",
+    type: "(value: number[]) => void",
+    description: "Callback when value changes"
+  }
+]} />

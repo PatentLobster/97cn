@@ -1,0 +1,65 @@
+---
+title: "OTP Input"
+description: "Windows 95 styled one-time password input component"
+category: "Controls"
+dependencies: []
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { OTPInput } from "@/components/97cn/otp-input"
+
+## Installation
+
+<InstallationTabs 
+  componentName="otp-input" 
+  dependencies={[]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <OTPInput length={6} />
+</AutoPreview>
+
+## Examples
+
+### Four Digits
+
+<AutoPreview>
+  <OTPInput length={4} />
+</AutoPreview>
+
+### Disabled
+
+<AutoPreview>
+  <OTPInput length={6} disabled />
+</AutoPreview>
+
+## Props
+
+<PropsTable props={[
+  {
+    name: "length",
+    type: "number",
+    defaultValue: "6",
+    description: "Number of OTP digits"
+  },
+  {
+    name: "value",
+    type: "string",
+    description: "Controlled value"
+  },
+  {
+    name: "onChange",
+    type: "(value: string) => void",
+    description: "Callback when value changes"
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the input is disabled"
+  }
+]} />

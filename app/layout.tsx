@@ -9,8 +9,11 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "97cn",
-  description: "Windows 95 inpired shadcn component library.",
+  title: {
+    default: "97cn - Windows 95 Component Library",
+    template: "%s - 97cn",
+  },
+  description: "Windows 95 inspired shadcn component library. Authentic retro aesthetics with modern accessibility and composability.",
   authors: [{name: "Itzik Sokolov"}, {name: "PatentLobster", url: "https://github.com/PatentLobster"}]
 }
 

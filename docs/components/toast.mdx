@@ -1,0 +1,54 @@
+---
+title: "Toast"
+description: "Windows 95 styled toast notifications using Sonner"
+category: "Feedback"
+dependencies: ["sonner"]
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95Button } from "@/components/97cn/button"
+
+## Installation
+
+<InstallationTabs 
+  componentName="toast" 
+  dependencies={["sonner"]}
+/>
+
+## Usage
+
+Add the `Toaster` component to your root layout:
+
+```tsx
+import { Toaster } from "@/components/97cn/toast"
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        {children}
+        <Toaster />
+      </body>
+    </html>
+  )
+}
+```
+
+Then use `toast()` from Sonner anywhere in your app:
+
+```tsx
+import { toast } from "sonner"
+
+toast("File saved successfully.")
+toast.error("Error: File not found.")
+toast("Download complete.", {
+  action: { label: "Open", onClick: () => {} },
+})
+```
+
+## Notes
+
+- The Toaster component applies Windows 95 styling (raised borders, system font, sharp corners) to all toast notifications automatically.
+- Use `toast()`, `toast.error()`, `toast.success()`, etc. from the `sonner` package to trigger notifications.

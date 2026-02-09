@@ -1,0 +1,69 @@
+---
+title: "Context Menu"
+description: "Windows 95 styled context menu with right-click support"
+category: "Navigation"
+dependencies: ["@radix-ui/react-context-menu"]
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95ContextMenu, Win95ContextMenuContent, Win95ContextMenuItem, Win95ContextMenuTrigger } from "@/components/97cn/context-menu"
+
+## Installation
+
+<InstallationTabs 
+  componentName="context-menu" 
+  dependencies={["@radix-ui/react-context-menu"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Win95ContextMenu>
+    <Win95ContextMenuTrigger className="flex h-32 w-64 items-center justify-center bg-win95-white win95-sunken text-xs text-win95-black">
+      Right click here
+    </Win95ContextMenuTrigger>
+    <Win95ContextMenuContent>
+      <Win95ContextMenuItem>Open</Win95ContextMenuItem>
+      <Win95ContextMenuItem>Save</Win95ContextMenuItem>
+      <Win95ContextMenuItem>Print</Win95ContextMenuItem>
+      <Win95ContextMenuItem>Properties</Win95ContextMenuItem>
+    </Win95ContextMenuContent>
+  </Win95ContextMenu>
+</AutoPreview>
+
+## Props
+
+### Win95ContextMenuTrigger
+
+<PropsTable props={[
+  {
+    name: "asChild",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Render as child element"
+  }
+]} />
+
+### Win95ContextMenuItem
+
+<PropsTable props={[
+  {
+    name: "inset",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Add left padding for alignment with icons"
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the item is disabled"
+  },
+  {
+    name: "onSelect",
+    type: "(event: Event) => void",
+    description: "Callback when item is selected"
+  }
+]} />

@@ -1,0 +1,99 @@
+---
+title: "Dialog"
+description: "Windows 95 styled modal dialog component"
+category: "Overlay"
+dependencies: ["@radix-ui/react-dialog"]
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/97cn/dialog"
+import { Win95Button } from "@/components/97cn/button"
+import { Win95Input } from "@/components/97cn/input"
+
+## Installation
+
+<InstallationTabs 
+  componentName="dialog" 
+  dependencies={["@radix-ui/react-dialog"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Dialog>
+    <DialogTrigger asChild>
+      <Win95Button>Open Dialog</Win95Button>
+    </DialogTrigger>
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle>Save As</DialogTitle>
+        <DialogDescription>
+          Choose a location to save your file.
+        </DialogDescription>
+      </DialogHeader>
+      <div className="space-y-2">
+        <label className="text-xs text-win95-black">File name:</label>
+        <Win95Input defaultValue="Untitled.txt" />
+      </div>
+      <div className="flex justify-end gap-2 mt-4">
+        <Win95Button>Save</Win95Button>
+        <Win95Button>Cancel</Win95Button>
+      </div>
+    </DialogContent>
+  </Dialog>
+</AutoPreview>
+
+## Props
+
+### Dialog
+
+<PropsTable props={[
+  {
+    name: "open",
+    type: "boolean",
+    description: "Controlled open state"
+  },
+  {
+    name: "defaultOpen",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Default open state"
+  },
+  {
+    name: "onOpenChange",
+    type: "(open: boolean) => void",
+    description: "Callback when open state changes"
+  }
+]} />
+
+### DialogContent
+
+<PropsTable props={[
+  {
+    name: "className",
+    type: "string",
+    description: "Additional CSS classes"
+  }
+]} />
+
+### DialogTitle
+
+<PropsTable props={[
+  {
+    name: "className",
+    type: "string",
+    description: "Additional CSS classes"
+  }
+]} />
+
+### DialogDescription
+
+<PropsTable props={[
+  {
+    name: "className",
+    type: "string",
+    description: "Additional CSS classes"
+  }
+]} />

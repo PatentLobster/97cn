@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Win95Window } from "@/components/97cn/window"
 import { Win95MenuBar, Win95MenuItem } from "@/components/97cn/menu-bar"
 import { Win95StatusBar, Win95StatusPanel } from "@/components/97cn/status-bar"
@@ -95,6 +96,9 @@ export default function Home() {
           <Win95MenuBar>
             <Win95MenuItem onClick={() => setShowSearchDialog(true)}>File</Win95MenuItem>
             <Win95MenuItem onClick={() => setShowThemeSwitcher(true)}>View</Win95MenuItem>
+            <Link href="/docs">
+              <Win95MenuItem>Docs</Win95MenuItem>
+            </Link>
             <Win95MenuItem onClick={() => setShowAboutDialog(true)}>Help</Win95MenuItem>
           </Win95MenuBar>
         }
@@ -137,17 +141,18 @@ export default function Home() {
                     {filteredComponents
                       .filter((c) => c.category === category)
                       .map((component) => (
-                        <button
-                          key={component.id}
-                          onClick={() => setActiveComponent(component.id)}
-                          className={`w-full text-left px-2 py-1 text-xs font-sans rounded-none ${
-                            activeComponent === component.id
-                              ? "bg-win95-highlight text-win95-highlight-text"
-                              : "text-win95-black hover:bg-win95-light-gray"
-                          }`}
-                        >
-                          {component.name}
-                        </button>
+                        <div key={component.id} className="flex items-center">
+                          <button
+                            onClick={() => setActiveComponent(component.id)}
+                            className={`flex-1 text-left px-2 py-1 text-xs font-sans rounded-none ${
+                              activeComponent === component.id
+                                ? "bg-win95-highlight text-win95-highlight-text"
+                                : "text-win95-black hover:bg-win95-light-gray"
+                            }`}
+                          >
+                            {component.name}
+                          </button>
+                        </div>
                       ))}
                   </div>
                 </div>

@@ -1,0 +1,80 @@
+---
+title: "Switch"
+description: "Windows 95 styled switch toggle component"
+category: "Controls"
+dependencies: ["@radix-ui/react-switch"]
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Switch } from "@/components/97cn/switch"
+
+## Installation
+
+<InstallationTabs 
+  componentName="switch" 
+  dependencies={["@radix-ui/react-switch"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <div className="flex items-center gap-2">
+    <Switch id="airplane-mode" />
+    <label htmlFor="airplane-mode" className="text-xs text-win95-black">Airplane Mode</label>
+  </div>
+</AutoPreview>
+
+## Examples
+
+### Checked by Default
+
+<AutoPreview>
+  <div className="flex items-center gap-2">
+    <Switch id="wifi" defaultChecked />
+    <label htmlFor="wifi" className="text-xs text-win95-black">Wi-Fi Enabled</label>
+  </div>
+</AutoPreview>
+
+### Disabled
+
+<AutoPreview>
+  <div className="space-y-2">
+    <div className="flex items-center gap-2">
+      <Switch id="disabled-off" disabled />
+      <label htmlFor="disabled-off" className="text-xs text-win95-dark-gray">Disabled (off)</label>
+    </div>
+    <div className="flex items-center gap-2">
+      <Switch id="disabled-on" disabled defaultChecked />
+      <label htmlFor="disabled-on" className="text-xs text-win95-dark-gray">Disabled (on)</label>
+    </div>
+  </div>
+</AutoPreview>
+
+## Props
+
+<PropsTable props={[
+  {
+    name: "checked",
+    type: "boolean",
+    description: "Controlled checked state"
+  },
+  {
+    name: "defaultChecked",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Default checked state"
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the switch is disabled"
+  },
+  {
+    name: "onCheckedChange",
+    type: "(checked: boolean) => void",
+    description: "Callback when checked state changes"
+  }
+]} />

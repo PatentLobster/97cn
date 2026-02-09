@@ -1,0 +1,62 @@
+---
+title: "Skeleton"
+description: "Windows 95 styled skeleton loading placeholder"
+category: "Feedback"
+dependencies: []
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Skeleton } from "@/components/97cn/skeleton"
+
+## Installation
+
+<InstallationTabs 
+  componentName="skeleton" 
+  dependencies={[]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <div className="flex items-center gap-4">
+    <Skeleton className="h-12 w-12 rounded-full" />
+    <div className="space-y-2">
+      <Skeleton className="h-4 w-48" />
+      <Skeleton className="h-4 w-32" />
+    </div>
+  </div>
+</AutoPreview>
+
+## Examples
+
+### Card Skeleton
+
+<AutoPreview>
+  <div className="space-y-3 w-64">
+    <Skeleton className="h-32 w-full" />
+    <Skeleton className="h-4 w-3/4" />
+    <Skeleton className="h-4 w-1/2" />
+  </div>
+</AutoPreview>
+
+### Text Lines
+
+<AutoPreview>
+  <div className="space-y-2 w-48">
+    <Skeleton className="h-4 w-full" />
+    <Skeleton className="h-4 w-full" />
+    <Skeleton className="h-4 w-3/4" />
+  </div>
+</AutoPreview>
+
+## Props
+
+<PropsTable props={[
+  {
+    name: "className",
+    type: "string",
+    description: "CSS classes to control size and shape"
+  }
+]} />

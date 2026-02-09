@@ -1,0 +1,82 @@
+---
+title: "Menu Bar"
+description: "Windows 95 styled menu bar for window applications"
+category: "Navigation"
+dependencies: []
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95MenuBar, Win95MenuItem } from "@/components/97cn/menu-bar"
+
+## Installation
+
+<InstallationTabs 
+  componentName="menu-bar" 
+  dependencies={[]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Win95MenuBar className="w-64">
+    <Win95MenuItem>File</Win95MenuItem>
+    <Win95MenuItem>Edit</Win95MenuItem>
+    <Win95MenuItem>View</Win95MenuItem>
+    <Win95MenuItem>Help</Win95MenuItem>
+  </Win95MenuBar>
+</AutoPreview>
+
+## Examples
+
+### Active Item
+
+<AutoPreview>
+  <Win95MenuBar className="w-64">
+    <Win95MenuItem active>File</Win95MenuItem>
+    <Win95MenuItem>Edit</Win95MenuItem>
+    <Win95MenuItem>View</Win95MenuItem>
+    <Win95MenuItem>Help</Win95MenuItem>
+  </Win95MenuBar>
+</AutoPreview>
+
+## Props
+
+### Win95MenuBar
+
+<PropsTable props={[
+  {
+    name: "className",
+    type: "string",
+    description: "Additional CSS classes"
+  },
+  {
+    name: "children",
+    type: "React.ReactNode",
+    required: true,
+    description: "Menu items"
+  }
+]} />
+
+### Win95MenuItem
+
+<PropsTable props={[
+  {
+    name: "active",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the item appears active/selected"
+  },
+  {
+    name: "onClick",
+    type: "() => void",
+    description: "Click handler"
+  },
+  {
+    name: "children",
+    type: "React.ReactNode",
+    required: true,
+    description: "Menu item label"
+  }
+]} />

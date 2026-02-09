@@ -1,0 +1,81 @@
+---
+title: "Status Bar"
+description: "Windows 95 styled status bar for window applications"
+category: "Navigation"
+dependencies: []
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95StatusBar, Win95StatusPanel } from "@/components/97cn/status-bar"
+
+## Installation
+
+<InstallationTabs 
+  componentName="status-bar" 
+  dependencies={[]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Win95StatusBar className="w-96">
+    <Win95StatusPanel className="flex-1">Ready</Win95StatusPanel>
+    <Win95StatusPanel sunken={false}>Ln 1, Col 1</Win95StatusPanel>
+    <Win95StatusPanel sunken={false}>100%</Win95StatusPanel>
+  </Win95StatusBar>
+</AutoPreview>
+
+## Examples
+
+### Multiple Panels
+
+<AutoPreview>
+  <Win95StatusBar className="w-96">
+    <Win95StatusPanel className="flex-1">For Help, press F1</Win95StatusPanel>
+    <Win95StatusPanel sunken={false}>NUM</Win95StatusPanel>
+    <Win95StatusPanel sunken={false}>CAPS</Win95StatusPanel>
+    <Win95StatusPanel sunken={false}>SCRL</Win95StatusPanel>
+  </Win95StatusBar>
+</AutoPreview>
+
+## Props
+
+### Win95StatusBar
+
+<PropsTable props={[
+  {
+    name: "className",
+    type: "string",
+    description: "Additional CSS classes"
+  },
+  {
+    name: "children",
+    type: "React.ReactNode",
+    required: true,
+    description: "Status panels"
+  }
+]} />
+
+### Win95StatusPanel
+
+<PropsTable props={[
+  {
+    name: "sunken",
+    type: "boolean",
+    defaultValue: "true",
+    description: "Whether the panel has a sunken border style"
+  },
+  {
+    name: "className",
+    type: "string",
+    description: "Additional CSS classes"
+  },
+  {
+    name: "children",
+    type: "React.ReactNode",
+    required: true,
+    description: "Panel content"
+  }
+]} />

@@ -1,0 +1,91 @@
+---
+title: "Command"
+description: "Windows 95 styled command palette component"
+category: "Controls"
+dependencies: ["cmdk"]
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Win95Command, Win95CommandEmpty, Win95CommandGroup, Win95CommandInput, Win95CommandItem, Win95CommandList } from "@/components/97cn/command"
+
+## Installation
+
+<InstallationTabs 
+  componentName="command" 
+  dependencies={["cmdk"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <Win95Command className="w-64 h-56">
+    <Win95CommandInput placeholder="Type a command..." />
+    <Win95CommandList>
+      <Win95CommandEmpty>No results found.</Win95CommandEmpty>
+      <Win95CommandGroup heading="Suggestions">
+        <Win95CommandItem>Open File</Win95CommandItem>
+        <Win95CommandItem>Save As...</Win95CommandItem>
+        <Win95CommandItem>Print</Win95CommandItem>
+      </Win95CommandGroup>
+      <Win95CommandGroup heading="Settings">
+        <Win95CommandItem>Display</Win95CommandItem>
+        <Win95CommandItem>Network</Win95CommandItem>
+      </Win95CommandGroup>
+    </Win95CommandList>
+  </Win95Command>
+</AutoPreview>
+
+## Props
+
+### Win95Command
+
+<PropsTable props={[
+  {
+    name: "className",
+    type: "string",
+    description: "Additional CSS classes"
+  }
+]} />
+
+### Win95CommandInput
+
+<PropsTable props={[
+  {
+    name: "placeholder",
+    type: "string",
+    description: "Input placeholder text"
+  }
+]} />
+
+### Win95CommandItem
+
+<PropsTable props={[
+  {
+    name: "value",
+    type: "string",
+    description: "Item value used for filtering"
+  },
+  {
+    name: "onSelect",
+    type: "(value: string) => void",
+    description: "Callback when item is selected"
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Whether the item is disabled"
+  }
+]} />
+
+### Win95CommandGroup
+
+<PropsTable props={[
+  {
+    name: "heading",
+    type: "string",
+    description: "Group heading text"
+  }
+]} />

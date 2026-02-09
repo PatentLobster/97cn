@@ -1,0 +1,59 @@
+---
+title: "Tooltip"
+description: "Windows 95 styled tooltip component"
+category: "Feedback"
+dependencies: ["@radix-ui/react-tooltip"]
+---
+
+import { AutoPreview } from "@/components/docs/auto-preview"
+import { PropsTable } from "@/components/docs/props-table"
+import { InstallationTabs } from "@/components/installation-tabs"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/97cn/tooltip"
+import { Win95Button } from "@/components/97cn/button"
+
+## Installation
+
+<InstallationTabs 
+  componentName="tooltip" 
+  dependencies={["@radix-ui/react-tooltip"]}
+/>
+
+## Usage
+
+<AutoPreview>
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Win95Button>Hover me</Win95Button>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>This is a Windows 95 tooltip</p>
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+</AutoPreview>
+
+## Props
+
+### TooltipContent
+
+<PropsTable props={[
+  {
+    name: "side",
+    type: '"top" | "right" | "bottom" | "left"',
+    defaultValue: '"top"',
+    description: "Tooltip placement side"
+  },
+  {
+    name: "sideOffset",
+    type: "number",
+    defaultValue: "4",
+    description: "Distance from trigger in pixels"
+  },
+  {
+    name: "align",
+    type: '"start" | "center" | "end"',
+    defaultValue: '"center"',
+    description: "Alignment along the side"
+  }
+]} />
